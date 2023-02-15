@@ -9,9 +9,10 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>app.report.model01</RootNamespace>
     <AssemblyName>app.report.model01</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -56,6 +57,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmReporte2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReporte2.Designer.cs">
+      <DependentUpon>frmReporte2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reportes\ListaPrecios.cs">
@@ -64,12 +71,21 @@
       <DependentUpon>ListaPrecios.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="View\frmReporte.cs">
+    <Compile Include="Reportes\ResumenVentas.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResumenVentas.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="frmReporte.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\frmReporte.Designer.cs">
+    <Compile Include="frmReporte.Designer.cs">
       <DependentUpon>frmReporte.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="frmReporte2.resx">
+      <DependentUpon>frmReporte2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -84,7 +100,11 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ListaPrecios.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\frmReporte.resx">
+    <EmbeddedResource Include="Reportes\ResumenVentas.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ResumenVentas.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReporte.resx">
       <DependentUpon>frmReporte.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
@@ -103,7 +123,9 @@
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="View\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

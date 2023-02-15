@@ -14,7 +14,7 @@ namespace app.report.model01
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmReporte());
+            Application.Run(new frmReporte2());
         }
     }
 }
